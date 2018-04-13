@@ -1,0 +1,86 @@
+nav.panel-control {
+	display: inline-block;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	button.active {
+		background: #b2b2b2;
+	}
+}
+
+.element > button {
+	position: relative;
+	color: $element-heading-color;
+	font-weight: bold;
+	background: transparent;
+	border: none;
+	border-top: 1px solid #a6a6a6;
+	text-align: left;
+	padding: 20px 10px;
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto;
+	display: block;
+	outline: none;
+	transition: all 0.5s ease;
+	cursor: pointer;
+	text-transform: uppercase;
+	&:hover {
+		color: $sky;
+	}
+	&:after {
+		position: absolute;
+		display: block;
+		right: 20px;
+		top: 21px;
+		font-family: FontAwesome;
+		content: "\f055"; //fa-plus-circle
+	}
+}
+
+button.open {
+	&:after {
+		font-family: FontAwesome;
+		content: "\f056";
+	}
+}
+
+.border-bottom {
+	border-bottom: 1px solid #a6a6a6;
+	max-width: 800px;
+	display: block;
+	margin: 0 auto;
+}
+
+.word,
+.html {
+	max-width: 720px;
+	margin-top: 50px;
+	margin: 0 auto 20px auto;
+}
+
+.word-button {
+	&:before {
+		font-family: FontAwesome;
+		content: "\f1c2";
+		margin-right: 10px;
+	}
+}
+
+.html-button {
+	&:before {
+		font-family: FontAwesome;
+		content: "\f121";
+		margin-right: 8px;
+	}
+}
+
+.preview-button {
+	cursor: default !important;
+	&:after {
+		content: "" !important;
+	}
+	&:hover {
+		color: $element-heading-color !important;
+	}
+}

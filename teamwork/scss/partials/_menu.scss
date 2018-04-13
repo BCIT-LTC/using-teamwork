@@ -1,0 +1,192 @@
+$menu-width: 280px;
+.menu-button {
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+}
+
+.nav-bar {
+    position: fixed;
+    z-index: $z-nav-bar;
+    top: -57px;
+    right: 0;
+    width: 100%;
+    padding: 10px;
+    background: $nav-bar-background-color;
+    transition: width .5s ease-out, top .25s ease-out;
+    &.showing {
+        top: 0;
+    }
+    .menu-button {
+        outline: none;
+        height: 30px;
+        width: 30px;
+        fill: $nav-bar-menu-button-fill-color;
+        border: none;
+        &:hover,
+        &:focus {
+            fill: $fraser;
+        }
+    }
+}
+
+#close-menu {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    z-index: 9999999;
+    backround-color: blue !important;
+    border: none;
+    text-indent: -999999px;
+    display: block;
+    height: 30px;
+    width: 30px;
+    &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "X";
+        padding-left: 10px;
+        text-indent: 0px;
+        display: block;
+    }
+}
+
+$branding-bcit-logo-size: 80px;
+.branding {
+    padding: 30px 0;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    .menu-button {
+        float: left;
+        height: 30px;
+        width: 30px;
+        display: inline;
+        margin-left: 30px;
+        margin-top: 24px;
+    }
+    .bcit-logo {
+        float: left;
+        background-image: url(../img/bcit-logo.svg);
+        background-size: cover;
+        margin-left: 30px;
+        //position: relative;
+        height: $branding-bcit-logo-size;
+        width: $branding-bcit-logo-size;
+        display: inline-block;
+    }
+    .site-title {
+        float: left;
+        color: $bcit-blue;
+        font-family: 'Oswald', sans-serif;
+        font-size: 26px;
+        font-weight: 400;
+        padding-top: 22px;
+        margin-left: 10px;
+    }
+}
+
+// Appearance
+.menu {
+    color: white;
+    //	box-shadow: 1px 1px 7px gray;
+    background: $menu-background-color;
+    border-right: 1px solid #cecece;
+    ul {
+        list-style-type: none;
+        left: 0;
+        width: 100%;
+        margin-right: 0;
+        padding-right: 0;
+        padding-left: 15px;
+    }
+    a {
+        padding: 2px 5px;
+        color: $menu-link-default-color;
+        border-bottom: none;
+        text-decoration: none;
+        &:visited {}
+        &:hover,
+        &:focus {
+            color: $sky-light;
+        }
+    }
+//    h3 {
+//        margin-top: 1em;
+//    }
+    .current {
+        background: white;
+        &:after {
+            content: "";
+            background: $sky;
+            width: 3px;
+            height: 100%;
+            position: absolute;
+            left: -10px;
+			top: 0;
+        }
+    }
+    .section {
+        margin-top: 20px;
+        &:first-child {
+            margin-top: 15px;
+        }
+        // Section Headings
+        > a {
+            //			color: #838383;
+            font-size: 19px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    }
+}
+
+// Behaviour
+.menu {
+    position: fixed;
+    z-index: $z-menu;
+    top: 0;
+    left: -1 * $menu-width - 10px;
+    width: $menu-width;
+    max-width: 100%;
+    transition: left .5s ease-out;
+    overflow: hidden;
+    .scrolling {
+        overflow-y: scroll;
+        position: relative;
+        left: 20px;
+        height: 100%;
+        padding-right: 40px;
+    }
+    //	@include media("screen", ">1400px") {
+    //		top: 0;
+    //		left: 0;
+    //	}
+    @include media("screen", "<420px") {
+        width: 100%;
+        left: -110%;
+    }
+    &.active {
+        //left: 0px;
+    }
+}
+
+.wrapper {
+    transition: width .5s ease-out;
+}
+
+.menu-open {
+    .menu {
+        left: 0px;
+    }
+    .nav-bar {
+        width: calc(100% - #{$menu-width}) !important;
+    }
+    .wrapper {
+        @include media("screen", ">1100px") {
+            width: calc(100% - #{$menu-width}) !important;
+        }
+    }
+}

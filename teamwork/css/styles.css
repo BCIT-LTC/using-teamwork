@@ -1,0 +1,632 @@
+@import url(//fonts.googleapis.com/css?family=Merriweather|Oswald);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css);
+/* line 5, ../scss/partials/_word.scss */
+.word * {
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif !important;
+}
+/* line 8, ../scss/partials/_word.scss */
+.word h1,
+.word h2,
+.word h3,
+.word h4,
+.word h5,
+.word h6 {
+  color: #4d6ea6;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-top: 30px;
+}
+/* line 19, ../scss/partials/_word.scss */
+.word h1 {
+  border-bottom: none;
+}
+/* line 22, ../scss/partials/_word.scss */
+.word p {
+  margin-bottom: 15px;
+}
+/* line 25, ../scss/partials/_word.scss */
+.word td, .word th {
+  border: 1px solid gray;
+}
+
+/* Example of HTML After JS Transformation
+<section class="word">
+	<div class="backing">
+		<div class="ruler"></div>
+
+		<div class="paper">
+			<p><strong>#activity</strong>
+			</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora dolor sapiente, eaque unde cumque! Quibusdam et ducimus architecto, error beatae quis neque sed, amet omnis ipsa magnam fugit dolor aspernatur.
+			</p>
+			<p><strong>/activity</strong>
+			</p>
+		</div>
+	</div>
+</section>*/
+/* line 45, ../scss/partials/_word.scss */
+.word {
+  font-family: calibri;
+}
+/* line 47, ../scss/partials/_word.scss */
+.word .backing {
+  padding: 10px 20px 20px;
+  background: #c8cdd2;
+}
+/* line 51, ../scss/partials/_word.scss */
+.word .ruler {
+  position: relative;
+  height: 22px;
+  width: 100%;
+  background-image: url("../img/ruler/center.png");
+  background-repeat: repeat-x;
+  margin-bottom: 10px;
+}
+/* line 58, ../scss/partials/_word.scss */
+.word .ruler:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 22px;
+  width: 112px;
+  background-image: url("../img/ruler/left.png");
+  background-repeat: no-repeat;
+}
+/* line 67, ../scss/partials/_word.scss */
+.word .ruler:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  height: 22px;
+  width: 113px;
+  background-image: url("../img/ruler/right.png");
+  background-repeat: no-repeat;
+}
+/* line 77, ../scss/partials/_word.scss */
+.word .paper {
+  background: white;
+  box-shadow: -2px 2px 20px #525559;
+  padding: 60px;
+  line-height: 1.3;
+}
+@media only screen and (max-width: 699px) {
+  /* line 85, ../scss/partials/_word.scss */
+  .word .paper {
+    padding: 50px 55px;
+  }
+  /* line 89, ../scss/partials/_word.scss */
+  .word .ruler:before {
+    width: 59px;
+    background-image: url("../img/ruler/left-small.png");
+  }
+  /* line 93, ../scss/partials/_word.scss */
+  .word .ruler:after {
+    width: 62px;
+    background-image: url("../img/ruler/right-small.png");
+  }
+}
+@media only screen and (max-width: 449px) {
+  /* line 101, ../scss/partials/_word.scss */
+  .word .paper {
+    padding: 30px 30px;
+  }
+  /* line 105, ../scss/partials/_word.scss */
+  .word .ruler:before {
+    width: 24px;
+    background-image: url("../img/ruler/left-smallest.png");
+  }
+  /* line 109, ../scss/partials/_word.scss */
+  .word .ruler:after {
+    width: 25px;
+    background-image: url("../img/ruler/right-smallest.png");
+  }
+}
+
+/* line 2, ../scss/partials/_menu.scss */
+.menu-button {
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+}
+
+/* line 9, ../scss/partials/_menu.scss */
+.nav-bar {
+  position: fixed;
+  z-index: 999;
+  top: -57px;
+  right: 0;
+  width: 100%;
+  padding: 10px;
+  background: #003C71;
+  transition: width .5s ease-out, top .25s ease-out;
+}
+/* line 18, ../scss/partials/_menu.scss */
+.nav-bar.showing {
+  top: 0;
+}
+/* line 21, ../scss/partials/_menu.scss */
+.nav-bar .menu-button {
+  outline: none;
+  height: 30px;
+  width: 30px;
+  fill: white;
+  border: none;
+}
+/* line 27, ../scss/partials/_menu.scss */
+.nav-bar .menu-button:hover, .nav-bar .menu-button:focus {
+  fill: #00ACA0;
+}
+
+/* line 34, ../scss/partials/_menu.scss */
+#close-menu {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  z-index: 9999999;
+  backround-color: blue !important;
+  border: none;
+  text-indent: -999999px;
+  display: block;
+  height: 30px;
+  width: 30px;
+}
+/* line 45, ../scss/partials/_menu.scss */
+#close-menu:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "X";
+  padding-left: 10px;
+  text-indent: 0px;
+  display: block;
+}
+
+/* line 57, ../scss/partials/_menu.scss */
+.branding {
+  padding: 30px 0;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+/* line 62, ../scss/partials/_menu.scss */
+.branding .menu-button {
+  float: left;
+  height: 30px;
+  width: 30px;
+  display: inline;
+  margin-left: 30px;
+  margin-top: 24px;
+}
+/* line 70, ../scss/partials/_menu.scss */
+.branding .bcit-logo {
+  float: left;
+  background-image: url(../img/bcit-logo.svg);
+  background-size: cover;
+  margin-left: 30px;
+  height: 80px;
+  width: 80px;
+  display: inline-block;
+}
+/* line 80, ../scss/partials/_menu.scss */
+.branding .site-title {
+  float: left;
+  color: #003C71;
+  font-family: 'Oswald', sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  padding-top: 22px;
+  margin-left: 10px;
+}
+
+/* line 92, ../scss/partials/_menu.scss */
+.menu {
+  color: white;
+  background: #f1f1f1;
+  border-right: 1px solid #cecece;
+}
+/* line 97, ../scss/partials/_menu.scss */
+.menu ul {
+  list-style-type: none;
+  left: 0;
+  width: 100%;
+  margin-right: 0;
+  padding-right: 0;
+  padding-left: 15px;
+}
+/* line 105, ../scss/partials/_menu.scss */
+.menu a {
+  padding: 2px 5px;
+  color: #0072CE;
+  border-bottom: none;
+  text-decoration: none;
+}
+/* line 111, ../scss/partials/_menu.scss */
+.menu a:hover, .menu a:focus {
+  color: #66c8ec;
+}
+/* line 119, ../scss/partials/_menu.scss */
+.menu .current {
+  background: white;
+}
+/* line 121, ../scss/partials/_menu.scss */
+.menu .current:after {
+  content: "";
+  background: #00A3E0;
+  width: 3px;
+  height: 100%;
+  position: absolute;
+  left: -10px;
+  top: 0;
+}
+/* line 131, ../scss/partials/_menu.scss */
+.menu .section {
+  margin-top: 20px;
+}
+/* line 133, ../scss/partials/_menu.scss */
+.menu .section:first-child {
+  margin-top: 15px;
+}
+/* line 137, ../scss/partials/_menu.scss */
+.menu .section > a {
+  font-size: 19px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* line 147, ../scss/partials/_menu.scss */
+.menu {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: -290px;
+  width: 280px;
+  max-width: 100%;
+  transition: left .5s ease-out;
+  overflow: hidden;
+}
+/* line 156, ../scss/partials/_menu.scss */
+.menu .scrolling {
+  overflow-y: scroll;
+  position: relative;
+  left: 20px;
+  height: 100%;
+  padding-right: 40px;
+}
+@media only screen and (max-width: 419px) {
+  /* line 147, ../scss/partials/_menu.scss */
+  .menu {
+    width: 100%;
+    left: -110%;
+  }
+}
+
+/* line 176, ../scss/partials/_menu.scss */
+.wrapper {
+  transition: width .5s ease-out;
+}
+
+/* line 181, ../scss/partials/_menu.scss */
+.menu-open .menu {
+  left: 0px;
+}
+/* line 184, ../scss/partials/_menu.scss */
+.menu-open .nav-bar {
+  width: calc(100% - 280px) !important;
+}
+@media only screen and (min-width: 1101px) {
+  /* line 187, ../scss/partials/_menu.scss */
+  .menu-open .wrapper {
+    width: calc(100% - 280px) !important;
+  }
+}
+
+/* line 1, ../scss/partials/_panels.scss */
+nav.panel-control {
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/* line 6, ../scss/partials/_panels.scss */
+nav.panel-control button.active {
+  background: #b2b2b2;
+}
+
+/* line 11, ../scss/partials/_panels.scss */
+.element > button {
+  position: relative;
+  color: #515151;
+  font-weight: bold;
+  background: transparent;
+  border: none;
+  border-top: 1px solid #a6a6a6;
+  text-align: left;
+  padding: 20px 10px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: block;
+  outline: none;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+/* line 28, ../scss/partials/_panels.scss */
+.element > button:hover {
+  color: #00A3E0;
+}
+/* line 31, ../scss/partials/_panels.scss */
+.element > button:after {
+  position: absolute;
+  display: block;
+  right: 20px;
+  top: 21px;
+  font-family: FontAwesome;
+  content: "\f055";
+}
+
+/* line 42, ../scss/partials/_panels.scss */
+button.open:after {
+  font-family: FontAwesome;
+  content: "\f056";
+}
+
+/* line 48, ../scss/partials/_panels.scss */
+.border-bottom {
+  border-bottom: 1px solid #a6a6a6;
+  max-width: 800px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* line 55, ../scss/partials/_panels.scss */
+.word,
+.html {
+  max-width: 720px;
+  margin-top: 50px;
+  margin: 0 auto 20px auto;
+}
+
+/* line 63, ../scss/partials/_panels.scss */
+.word-button:before {
+  font-family: FontAwesome;
+  content: "\f1c2";
+  margin-right: 10px;
+}
+
+/* line 71, ../scss/partials/_panels.scss */
+.html-button:before {
+  font-family: FontAwesome;
+  content: "\f121";
+  margin-right: 8px;
+}
+
+/* line 78, ../scss/partials/_panels.scss */
+.preview-button {
+  cursor: default !important;
+}
+/* line 80, ../scss/partials/_panels.scss */
+.preview-button:after {
+  content: "" !important;
+}
+/* line 83, ../scss/partials/_panels.scss */
+.preview-button:hover {
+  color: #515151 !important;
+}
+
+/* line 1, ../scss/partials/_preview.scss */
+.preview {
+  margin: 1% 0;
+  overflow: hidden;
+  width: 100%;
+  padding: 30px 0px;
+  position: relative;
+}
+
+/* line 12, ../scss/partials/_preview.scss */
+.narrow-preview .preview,
+.narrow-preview.preview {
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: visible;
+}
+
+/* line 21, ../scss/partials/_preview.scss */
+.preview.container > *:first-child {
+  margin-top: 0;
+}
+/* line 25, ../scss/partials/_preview.scss */
+.preview.container > *:last-child {
+  margin-bottom: 0;
+}
+
+/* line 2, ../scss/partials/_element.scss */
+.element {
+  background: white;
+  margin: 15px;
+  margin-bottom: 30px;
+  padding: 20px;
+  padding-top: 50px;
+  border-radius: 2px;
+  padding-bottom: 100px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+/* line 17, ../scss/partials/_element.scss */
+.element > .blurb,
+.element > .usage,
+.element > header {
+  max-width: 800px;
+  margin: 0 auto;
+  display: block;
+}
+/* line 24, ../scss/partials/_element.scss */
+.element > .usage {
+  margin-bottom: 20px;
+}
+/* line 27, ../scss/partials/_element.scss */
+.element > .blurb {
+  margin-bottom: 50px;
+}
+/* line 30, ../scss/partials/_element.scss */
+.element > header {
+  color: #515151;
+  font-weight: bold;
+}
+/* line 33, ../scss/partials/_element.scss */
+.element > header h2 {
+  font-family: 'Merriweather', serif;
+  font-size: 2em;
+}
+
+/* line 41, ../scss/partials/_element.scss */
+.element .usage h1,
+.element .usage h2,
+.element .usage h3,
+.element .usage h4,
+.element .usage h5,
+.element .usage h6 {
+  color: #515151;
+  text-transform: uppercase;
+}
+
+/* line 24, ../scss/styles.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 28, ../scss/styles.scss */
+.wrapper {
+  position: relative;
+  background: #f1f1f1;
+  color: #838383;
+  width: 100%;
+  float: right;
+}
+
+/* line 36, ../scss/styles.scss */
+.wrapper > header {
+  text-align: center;
+  padding-bottom: 50px;
+}
+/* line 40, ../scss/styles.scss */
+.wrapper > header h1 {
+  margin-bottom: 50px;
+  font-size: 72px;
+  padding: 0;
+  border-bottom: none;
+  color: #003C71;
+  font-variant: small-caps;
+}
+/* line 48, ../scss/styles.scss */
+.wrapper > header p {
+  max-width: 75%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (max-width: 599px) {
+  /* line 36, ../scss/styles.scss */
+  .wrapper > header {
+    padding-top: 35px;
+  }
+  /* line 56, ../scss/styles.scss */
+  .wrapper > header h1 {
+    margin-bottom: 25px;
+    font-size: 50px;
+  }
+}
+@media only screen and (max-width: 399px) {
+  /* line 36, ../scss/styles.scss */
+  .wrapper > header {
+    padding-top: 17.5px;
+    padding-bottom: 12px;
+  }
+  /* line 64, ../scss/styles.scss */
+  .wrapper > header h1 {
+    margin-bottom: 12px;
+    font-size: 40px;
+  }
+}
+
+/* line 71, ../scss/styles.scss */
+div.ug-splash {
+  display: table-cell;
+  width: 100%;
+  height: 70vh;
+}
+
+/* line 77, ../scss/styles.scss */
+.ug-splash {
+  background-color: #003C71;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  padding: 1em;
+}
+/* line 83, ../scss/styles.scss */
+.ug-splash p {
+  font-size: 1.5em;
+}
+/* line 86, ../scss/styles.scss */
+.ug-splash a.btn {
+  color: white;
+  display: inline-block;
+}
+
+/* line 92, ../scss/styles.scss */
+.process-add-project,
+.process-design-develop,
+.process-upload-files,
+.process-set-tasks,
+.process-in-progress,
+.process-end {
+  padding: 1em 1em 4em 1em;
+  border-bottom: 1px dotted #bababa;
+  font-size: 1.25em;
+  color: #515151;
+}
+/* line 102, ../scss/styles.scss */
+.process-add-project *,
+.process-design-develop *,
+.process-upload-files *,
+.process-set-tasks *,
+.process-in-progress *,
+.process-end * {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 107, ../scss/styles.scss */
+.process-add-project h1,
+.process-design-develop h1,
+.process-upload-files h1,
+.process-set-tasks h1,
+.process-in-progress h1,
+.process-end h1 {
+  color: #003C71;
+  border: none;
+  text-align: center;
+  font-size: 50px;
+}
+/* line 113, ../scss/styles.scss */
+.process-add-project h2,
+.process-design-develop h2,
+.process-upload-files h2,
+.process-set-tasks h2,
+.process-in-progress h2,
+.process-end h2 {
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 117, ../scss/styles.scss */
+.process-add-project p,
+.process-design-develop p,
+.process-upload-files p,
+.process-set-tasks p,
+.process-in-progress p,
+.process-end p {
+  margin: 1.5em auto;
+}
